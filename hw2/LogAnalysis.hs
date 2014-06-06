@@ -34,8 +34,8 @@ instance Ord LogMessage where
 -- insert add a LogMessage to the MessageTree, BST sorted
 insert:: LogMessage -> MessageTree -> MessageTree
 insert (Unknown _) tree = tree
-insert message Leaf = newNode message 
-insert message (Node Leaf node rightChild) 
+insert message Leaf = newNode message
+insert message (Node Leaf node rightChild)
         |  message < node = Node (newNode message) node rightChild;
 insert message (Node leftChild node Leaf)
         |  message > node = Node leftChild node (newNode message)
@@ -60,6 +60,6 @@ whatWentWrong = map messageOf . filter wrong where
     messageOf _ = error "No message, huh?"
 
     wrong:: LogMessage -> Bool
-    wrong (LogMessage (Error s) _ _) = s > 50 
+    wrong (LogMessage (Error s) _ _) = s > 50
     wrong (LogMessage _ s _) = s > 50
     wrong _ = False
