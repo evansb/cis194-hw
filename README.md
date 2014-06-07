@@ -3,4 +3,4 @@
 This is the solution of [CIS194 Haskell
 Course](http://www.seas.upenn.edu/~cis194/lectures.html)
 
-Progress : **3/12**
+Progress : **4/12**
