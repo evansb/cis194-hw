@@ -20,12 +20,12 @@ foldTree :: [a] -> Tree a
 foldTree [] = Leaf
 foldTree xs = Node height 
             (foldTree $ take half xs) 
-        (xs !! half)
+            (xs !! half)
             (foldTree $ drop (half + 1) xs)
         where 
             len = length xs
             half = len `div` 2
-            height = floor $ logBase 2 (fromIntegral len)
+            height = floor (logBase 2 (fromIntegral len)::Double)
 
 xor:: [Bool] -> Bool
 xor = foldr (\x y -> (not x && y) || (x && not y)) False
